@@ -1,7 +1,8 @@
 import math
 
-class MagicNumber(object):
-    def countMagicsNumbers(self, init, end):
+class CalculateMagicNumbers(object):
+
+    def calculate(self, init, end):
         sum = 0
 
         for number in range(init, end + 1):
@@ -11,12 +12,17 @@ class MagicNumber(object):
         return sum
     
     def isMagicNumber(self, number):
-        if( self.__haveSquare(number) ):
+        if( self.haveSquare(number) ):
+
+            number = math.sqrt(number)
+            if not self.isPrime(number):
+                return False
+            
             return True
         
         return False
     
-    def __isPrime(self, number):
+    def isPrime(self, number):
         number = abs( int(number) )
         
         if number < 2:
@@ -34,14 +40,9 @@ class MagicNumber(object):
 
         return True
     
-    def __haveSquare(self, number):
+    def haveSquare(self, number):
         
         if ( math.sqrt(number) - int(math.sqrt(number)) ):
-            return False
-
-        number = math.sqrt(number)
-
-        if not self.__isPrime(number):
             return False        
         
         return True

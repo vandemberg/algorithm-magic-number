@@ -1,16 +1,18 @@
 
-from business.count_number_magic import CountMagicNumber
+from business.total_magic_numbers import TotalMagicNumbers
 
 if __name__ == "__main__":
-    number_of_inputs = int(input("Quantidade de valores inseridos: "))
-    sum_magic_numbers = 0
-    count = 0
-    magic_number = MagicNumber()
+    number_of_inputs = int(input())
+    input_data = []
 
     for count in range(0, number_of_inputs):
-        number_init = int(input("Valor incial: "))
-        number_end = int(input("Valor final: "))
+        number_init = int(input())
+        number_end = int(input())
+        input_data.append([
+            number_init, number_end
+        ])
 
-        sum_magic_numbers += magic_number.countMagicsNumbers(number_init, number_end)
-    
-    print(sum_magic_numbers)
+    total = TotalMagicNumbers()
+    result_magic_numbers = total.calculate(input_data)
+
+    print(result_magic_numbers)
