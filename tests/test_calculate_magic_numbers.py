@@ -16,24 +16,24 @@ class TestCalculateMagicNumbers(unittest.TestCase):
 
     def test_is_prime(self):
         magic_number = CalculateMagicNumbers()
-        self.assertEqual(magic_number.isMagicNumber(3), True)
+        self.assertEqual(magic_number.isPrime(3), True)
 
     def test_is_square(self):
         magic_number = CalculateMagicNumbers()
-        self.assertEqual(magic_number.isMagicNumber(100), True)
+        self.assertEqual(magic_number.haveSquare(100), True)
 
     #### INVALID RESULTS
     def test_is_not_magic_number(self):
         magic_number = CalculateMagicNumbers()
-        self.assertEqual(magic_number.isMagicNumber(100), True)
+        self.assertEqual(magic_number.isMagicNumber(100), False)
 
     def test_is_not_prime(self):
         magic_number = CalculateMagicNumbers()
-        self.assertEqual(magic_number.isMagicNumber(10), True)
+        self.assertEqual(magic_number.isPrime(10), False)
 
     def test_is_not_square(self):
         magic_number = CalculateMagicNumbers()
-        self.assertEqual(magic_number.isMagicNumber(10), True)
+        self.assertEqual(magic_number.haveSquare(10), False)
 
 if __name__ == '__main__':
     unittest.main()
